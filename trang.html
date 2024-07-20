@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phở Việt Nam</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+<body>
+    <header>
+        <h1>Phở Việt Nam</h1>
+        <nav>
+            <ul>
+                <li><a href="#menu" onclick="showSection('menu')">Menu</a></li>
+                <li><a href="#about" onclick="showSection('about')">Giới thiệu</a></li>
+                <li><a href="#contact" onclick="showSection('contact')">Liên hệ</a></li>
+                <li><a href="#cart" onclick="showSection('cart')">Cửa hàng</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="menu" class="section active">
+        <h2>Menu</h2>
+        <div id="product-container" class="products">
+            <!-- Sản phẩm sẽ được thêm vào đây -->
+        </div>
+        <div id="pagination" class="pagination">
+            <!-- Nút phân trang sẽ được thêm vào đây -->
+        </div>
+    </section>
+
+    <section id="about" class="section">
+        <h2>Giới thiệu</h2>
+        <p>Phở Việt Nam là món ăn truyền thống nổi tiếng của người Việt. Chúng tôi tự hào mang đến cho bạn những tô phở thơm ngon, đậm đà hương vị.</p>
+    </section>
+
+    <section id="contact" class="section">
+        <h2>Liên hệ</h2>
+        <p>Địa chỉ: 329/64/31 Điện Biên Phủ</p>
+        <p>Số điện thoại: 0389758949</p>
+        <p>Email: quachba018@gmail.com</p>
+    </section>
+
+    <section id="cart" class="section">
+        <h2> Những món ăn hiện có</h2>
+        <div id="cartItems"></div>
+        <h3>Tổng tiền: <span id="totalPrice">0</span> VND</h3>
+        <button onclick="showSection('checkout')">Thanh toán</button>
+        
+    </section>
+
+    <section id="checkout" class="section">
+        <h2>Thanh toán</h2>
+        <form id="checkoutForm">
+            <label for="paymentMethod">Phương thức thanh toán:</label>
+            <select id="paymentMethod">
+                <option value="cash">Tiền mặt</option>
+                <option value="card">ATM</option>
+            </select>
+            <div id="qrImage" style="display:none;">
+                <img src="image/QR.jpg" alt="QR Code">
+                <br>
+                <span>Họ tên: Quách Tấn Đạt <br> Số tài khoản: 37821137 <br>
+                    Tên chủ tài khoản: QUACH TAN DAT<br>
+                    Tên ngân hàng: ACB </span>
+            </div>
+            <br>
+            <label for="address">Địa chỉ giao hàng:</label>
+            <input type="text" id="address" required><br>
+            <label for="phone">Số điện thoại:</label>
+            <input type="text" id="phone" required><br>
+            <button type="submit">Hoàn tất thanh toán</button>
+        </form>
+    </section>
+
+    <script src="back.js"></script>
+</body>
+</html>
